@@ -3,6 +3,9 @@ name: CI
 on:
   pull_request:
     types: [ opened, reopened, synchronize ]
+  push:
+    branches:
+      - main
 
 env:
   JDK_JAVA_OPTIONS: -XX:+PrintCommandLineFlags -Xms6G -Xmx6G -Xss4M -XX:+UseG1GC

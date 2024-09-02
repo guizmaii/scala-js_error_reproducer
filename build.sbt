@@ -37,9 +37,6 @@ lazy val root =
       `scala-and-js`.js,
     )
 
-val testPlaceholdersParserJsLib    = taskKey[Unit]("Test JS lib for PlaceholdersParser")
-val publishPlaceholdersParserJsLib = taskKey[Unit]("Publish JS lib to Buildkite")
-
 lazy val `scala-and-js` =
   crossProject(JSPlatform, JVMPlatform)
     .crossType(CrossType.Full) // https://github.com/portable-scala/sbt-crossproject?tab=readme-ov-file#crosstypes
@@ -57,5 +54,4 @@ lazy val `scala-and-js` =
         _.withModuleKind(ModuleKind.ESModule) // See https://www.scala-js.org/doc/project/module.html
           .withModuleSplitStyle(ModuleSplitStyle.FewestModules)
       },
-      Test / scalaJSStage             := FullOptStage // Runs the tests in Production mode. See https://www.scala-js.org/doc/project/building.html#full-optimize
     )
