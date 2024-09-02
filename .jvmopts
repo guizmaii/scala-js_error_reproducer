@@ -1,0 +1,8 @@
+# This is a comment
+-Dfile.encoding=UTF8
+-Xms128M
+-Xmx8G
+-Xss8M
+-XX:+UseG1GC
+--add-opens=java.base/java.util=ALL-UNNAMED
+--add-opens=java.base/java.lang=ALL-UNNAMED
